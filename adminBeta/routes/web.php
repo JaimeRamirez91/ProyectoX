@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ['as' => 'admin', 'uses' => 'rutaFormController@index']);
+Route::view('/login', 'login');
+Route::view('/register', 'register');
+
+
+
