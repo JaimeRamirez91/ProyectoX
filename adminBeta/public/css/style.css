@@ -1,0 +1,26 @@
+.colorSpan{
+	background:#d9edf7 !important;
+	color: #31708f !important;
+	width: 80px !important;
+	border: 0.05em solid #46b8da !important;
+	padding: 1px !important;
+	border-radius: 10px !important;
+}
+.InputStyle{
+	margin-left: 2px !important;
+	border: 1px solid #46b8da !important;
+	border-radius: 10px !important;
+}
+.centrarTxt{
+	text-align: center !important;
+}
+
+
+#panelComent{
+	margin-top: 20px !important;
+	margin-left: 10% !important;
+}
+.SeparatorColor{
+	color:  #F2F5F3 !important; 
+}
+

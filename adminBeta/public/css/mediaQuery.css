@@ -1,0 +1,127 @@
+/* Large desktops and laptops */
+
+@media (min-width: 1200px) {
+   #contenidoPrincipal{
+		height: 1100px;
+	} 
+	#home{
+		height: 1000px;
+	} 
+    #Cnt2OT{
+	background: none; 
+	border: 0.05em solid #46b8da !important;
+	border-radius: 10px !important;
+	margin-left: 20px !important;
+	background:  #F2F5F3 !important;
+	
+
+	 }
+   #Cnt1OT{
+	background: none; 
+	border: 0.05em solid #46b8da !important;
+	border-radius: 10px !important;
+	background:  #F2F5F3 !important;
+	
+	
+
+}
+
+   
+}
+
+
+/* Landscape tablets and medium desktops */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	#contenidoPrincipal{
+		height: 1100px;
+	} 
+	#home{
+		height: 1000px;
+	} 
+    #Cnt2OT{
+	background: none; 
+	border: 0.05em solid #46b8da !important;
+	border-radius: 10px !important;
+	margin-left: 5px !important;
+	margin: 0 auto;
+	margin-left: 20px !important;
+	background:  #F2F5F3 !important;
+   }
+    #Cnt1OT{
+	background: none; 
+	border: 0.05em solid #46b8da !important;
+	border-radius: 10px !important;ç
+	margin-left: 10% !important;
+	background:  #F2F5F3 !important;
+	}
+	.separadorLabel{
+		margin-top: 15px !important;
+	} 
+} 
+
+
+/* Portrait tablets and small desktops */
+
+@media (min-width: 768px) and (max-width: 991px) {
+	#contenidoPrincipal{
+		height: 2200px;
+	}
+	#home{
+		height: 2100px;
+	} 
+    #Cnt2OT{
+	background: none; 
+	border: 0.05em solid #46b8da !important;
+	border-radius: 10px !important;
+	margin-left: 5px !important;
+	margin-top: 50px !important;
+	background:  #F2F5F3 !important;
+    }
+     #Cnt1OT{
+	
+	border: 0.05em solid #46b8da !important;
+	border-radius: 10px !important;
+	
+	background:  #F2F5F3 !important;
+	}
+	.separadorLabel{
+		margin-top: 15px !important;
+	} 
+ 
+}
+
+
+/* Landscape phones and portrait tablets */
+
+@media (max-width: 767px) {
+
+  #contenidoPrincipal{
+		height: 2200px;
+	} 
+	#home{
+		height: 2100px;
+	}
+	#Cnt2OT{
+	background: none; 
+	border: 0.05em solid #46b8da !important;
+	border-radius: 10px !important;
+	margin-left: 5px !important;
+	margin-top: 50px !important;
+	background:  #F2F5F3 !important;
+    }
+    
+    #Cnt1OT{
+	border: 0.05em solid #46b8da !important;
+	border-radius: 10px !important;
+	
+	background:  #F2F5F3 !important;
+	}
+	.separadorLabel{
+		margin-top: 15px !important;
+	}  
+   
+ 
+}
+
+

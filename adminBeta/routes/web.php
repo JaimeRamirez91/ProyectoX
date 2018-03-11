@@ -12,7 +12,7 @@
 */
 
 Route::get('/', ['as' => 'admin', 'uses' => 'rutaFormController@index']);
-Route::view('/login', 'login');
+/*Route::view('/', 'pb');*/
 Route::view('/register', 'register');
 
 

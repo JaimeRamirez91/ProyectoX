@@ -16,6 +16,7 @@ class CreateCuentasTable extends Migration
         Schema::create('cuentas', function (Blueprint $table) {
             /*llave primaria*/
             $table->increments('id');
+            $table->string('codcuentaservicio',30)->unique();;
             $table->unsignedInteger('id_cliente')->unsigned();
             $table->unsignedInteger('id_servicio')->unsigned();
             $table->string('direccion', 100);
