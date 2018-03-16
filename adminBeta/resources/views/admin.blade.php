@@ -25,6 +25,7 @@
             
       
    <!--                 contenedor de tablas            -->   
+
             <div class="tab-content hidden-xs hidden-sm" id="myTabContent" >
 
                   <div class="tab-pane fade active in " " id="home" role="tabpanel" aria-labelledby="home-tab" style="background: white;">
@@ -101,31 +102,45 @@
                                                  <h4  style=" text-align: center; color: white; border: 1px solid #46b8da !important; background: #0D939B !important;
                                                   border-radius: 10px !important;">DETALLE CUENTA-SERVICIO
                                                 </h4>
-                                                <div class="row">
+                                                 <div id="alert-i"  class="text-center" style="background: green; color: white; border-radius: 10px !important;"></div>
+                                                 <div id="alert-d" class="text-center" style="background: red; color: white;border-radius: 10px !important;"></div>
+
+                                           
+                               {!! Form::open(['route' => ['admin', ':COD' ], 'method' => 'post']) !!}
+                                                  <div class="row">
                                                    <li role="separator" class="divider SeparatorColor" ></li>
+
+                                                   
                                                   <div class="col-lg-6 col-md-6">
                                                           <div class="input-group">
                                                               <span class="input-group-addon bg-info colorSpan" id="basic-addon1"  style="">Cuenta: </span>
-                                                              <input type="text" class="form-control InputStyle" placeholder="Nùmero de cuenta" aria-describedby="basic-addon1">
+                                                              <input id="iCod"  type="text" class="form-control InputStyle" placeholder="Nùmero de cuenta" aria-describedby="basic-addon1">
 
                                                           </div>    
                                                   </div>
+                                               <!--btn Buscar cuenta-->
 
                                                   <div class="col-lg-6 col-md-12">
                                                     <div class="input-group">
-                                                              <button type="button" class="btn btn-block btn-primary btn-sm">
-                                                                 <i class="fa fa-search"> Buscar</i>
-                                                              </button>
+                                                              
+                                                            
+                                                                 <button type="submit" value="enviar" class="btn btn-block btn-primary btn-sm" id="btn-buscar">
+                                                                        <i class="fa fa-search" >.....</i>
+                                                                 </button>
+                                                       
+                                                              
 
                                                           </div> 
                                                   </div> 
                                                 </div>
+                               {!! Form::close() !!}
+
                                                  <li role="separator" class="divider SeparatorColor" ></li>
                                                 <div class="row">
                                                     <div class="col-lg-6 col-md-12">
                                                          <div class="input-group">
                                                               <span class="input-group-addon bg-info colorSpan" id="basic-addon1"  style="">Nombres: </span>
-                                                              <input type="text" class="form-control InputStyle" placeholder="Nombres Usuario" aria-describedby="basic-addon1">
+                                                              <input id="nUsr" type="text" class="form-control InputStyle" placeholder="Nombres Usuario" aria-describedby="basic-addon1">
 
                                                           </div> 
                                                       
@@ -133,7 +148,7 @@
                                                       <div class="col-lg-6 col-md-12 separadorLabel">
                                                          <div class="input-group">
                                                               <span class="input-group-addon bg-info colorSpan" id="basic-addon1"  style="">Apellidos: </span>
-                                                              <input type="text" class="form-control InputStyle" placeholder="Apellidos Usuario" aria-describedby="basic-addon1">
+                                                              <input id="aUsr" type="text" class="form-control InputStyle" placeholder="Apellidos Usuario" aria-describedby="basic-addon1">
 
                                                           </div> 
                                                       
@@ -144,7 +159,7 @@
                                                       <div class="col-lg-12 col-md-12">
                                                             <div class="form-group">
                                                                 <label for="comment" >Direcciòn:</label>
-                                                                <textarea class="form-control InputStyle" rows="2" id="comment"  style="resize:none;"></textarea>
+                                                                <textarea id="txtDir" class="form-control InputStyle" rows="2" id="comment"  style="resize:none;"></textarea>
                                                              </div>   
                                                       </div>
                                                    
@@ -156,7 +171,7 @@
                                                     <div class="col-lg-6 col-md-12">
                                                          <div class="input-group">
                                                               <span class="input-group-addon bg-info colorSpan" id="basic-addon1"  style="">contactos: </span>
-                                                              <input type="text" class="form-control InputStyle" placeholder="Telefonos" aria-describedby="basic-addon1">
+                                                              <input id="contCli" type="text" class="form-control InputStyle" placeholder="Telefonos" aria-describedby="basic-addon1">
 
                                                           </div> 
                                                       
@@ -164,7 +179,7 @@
                                                       <div class="col-lg-6 col-md-12 separadorLabel">
                                                          <div class="input-group">
                                                               <span class="input-group-addon bg-info colorSpan" id="basic-addon1"  style="">Ruta: </span>
-                                                              <input type="text" class="form-control InputStyle" placeholder="Ruta" aria-describedby="basic-addon1">
+                                                              <input id="rutaCli" type="text" class="form-control InputStyle" placeholder="Ruta" aria-describedby="basic-addon1">
 
                                                           </div> 
                                                       
@@ -176,7 +191,8 @@
                                                     <div class="col-lg-6 col-md-12">
                                                          <div class="input-group">
                                                               <span class="input-group-addon bg-info colorSpan" id="basic-addon1"  style="">Nodo: </span>
-                                                              <input type="text" class="form-control InputStyle" placeholder="Nodo" aria-describedby="basic-addon1">
+
+                                                              <input id="nodoCli" type="text" class="form-control InputStyle" placeholder="Nodo" aria-describedby="basic-addon1">
 
                                                           </div> 
                                                       
@@ -184,7 +200,7 @@
                                                       <div class="col-lg-6 col-md-12 separadorLabel">
                                                          <div class="input-group">
                                                               <span class="input-group-addon bg-info colorSpan" id="basic-addon1"  style="">Zona: </span>
-                                                              <input type="text" class="form-control InputStyle" placeholder="Zona" aria-describedby="basic-addon1">
+                                                              <input id="zonaCli" type="text" class="form-control InputStyle" placeholder="Zona" aria-describedby="basic-addon1"  >
 
                                                           </div> 
                                                       
@@ -233,8 +249,8 @@
                                                               <span class="input-group-addon colorSpan colorSpan" id="basic-addon1">Tipificaciòn</span>
                                                               <select id="inputState" class="form-control InputStyle">
                                                                   <option selected>---Seleccione---</option>
-                                                                  <option>x</option>
-                                                                  <option>y</option>
+                                                                  <option>Visita efectuada</option>
+                                                                  <option>Visita no efectuada</option>
                                                               </select>
                                                             </div>  
                                                       </div>
@@ -309,12 +325,15 @@
                                                    
                                                  </div>
                                                  <div class="row">
+                                          {!! Form::open(['route' => 'pb', 'method' => 'POST']) !!}
                                                   <div class="col-lg-3 col-lg-offset-3">
                                                           <div class="input-group">
-                                                              <button type="button" class="btn btn-block btn-success">Guardar</button>
+                                                              <button id="btn-saveOT" type="button" class="btn btn-block btn-success">Guardar</button>
                                                              
                                                           </div>    
                                                       </div>
+                                            {!! Form::close() !!}
+           
                                                       <div class="col-lg-3">
                                                           <div class="input-group">
                                                               
@@ -324,20 +343,31 @@
                                                    
                                                  </div>
 
+                                                 <div id="alert-d2" class="text-center" style="background: red; color: white;border-radius: 10px !important;">sffs</div>
+
                                                </div>      
                             </div>
                             </div>
                           
                   </div>
+                  
 
                   <div class="tab-pane fade " id="profile" role="tabpanel" aria-labelledby="profile-tab" style="background: white">
                     
                     div2
 
                   </div>
+              
+                  
+
 
             </div> 
     </div>
 @stop    
 
+  <!--Contenido-->
+@section('script')
+   <script src="{{'js/Scriptcuentas.js'}}"></script>
+   
 
+@stop

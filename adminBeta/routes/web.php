@@ -12,8 +12,10 @@
 */
 
 Route::get('/', ['as' => 'admin', 'uses' => 'rutaFormController@index']);
-/*Route::view('/', 'pb');*/
-Route::view('/register', 'register');
 
+Route::post('/admin/{cod}',['as' => 'admin', 'uses' => 'CuentasController@show']);
+Route::post('/pb',['as' => 'pb', 'uses' => 'OTController@store']);
+//Route::get('/', function () {$exitCode = Artisan::call('cache:clear');});
 
-
+/*Recien agragado*/
+//Route::Resource('ordent','OTController');

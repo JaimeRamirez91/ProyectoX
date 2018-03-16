@@ -15,7 +15,7 @@ class CreateOtsTable extends Migration
     {
         Schema::create('ots', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('otsiebel',15);
+            $table->string('otsiebel',15)->nullable();
             $table->unsignedInteger('id_tipoot')->unsigned();
             $table->foreign('id_tipoot')->references('id')->on('tipoots');
             $table->string('comentario',200);
@@ -25,7 +25,7 @@ class CreateOtsTable extends Migration
             $table->unsignedInteger('id_cuenta')->unsigned();
             $table->unsignedInteger('id_unidad')->unsigned();
 
-            $table->string('comentariounidad',300);
+            $table->string('comentariounidad',300)->nullable();
              $table->tinyInteger('estado');
              $table->unsignedInteger('id_otstado')->unsigned();
 

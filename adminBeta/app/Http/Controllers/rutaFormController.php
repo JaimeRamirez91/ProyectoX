@@ -1,10 +1,10 @@
 <?php
 
-
 use App\Ruta;
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Http\Requests;
 class rutaFormController extends Controller{
     		function index(){
     			/* query normal*/
@@ -22,10 +22,14 @@ class rutaFormController extends Controller{
                  /*sin filtro*/
                  $rutas = \App\Ruta::join("Departamentos","Rutas.id_departamento","=","departamentos.id")->join("Zonas","Rutas.id_zona","=","zonas.id")
                     ->get();
-   
 
 	           			
 	           // return view('admin', compact('rutas'));   			
 	            return view('admin', compact('rutas')); 
     		}
+
+
+
+    		
+    				
 }

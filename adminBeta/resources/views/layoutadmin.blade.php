@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Movical | SV</title>
+  <meta name="csrf-token" content="{{ csrf_token() }}" id="token">
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -176,7 +177,7 @@
         </section>
 
         <!-- Main content -->
-        <section class="align-content-around"  id = "contenidoPrincipal" style="  margin-top: 15px; margin-left: 20px !important; margin-right: 20px !important" >
+        <section class="align-content-around"  id = "contenidoPrincipal" style="  margin-top: 15px; margin-left: 20px !important; margin-right: 20px !important;" >
          
             <!--Contenido-->
             @yield('contenido')
@@ -220,6 +221,10 @@
     <strong>Copyright &copy; 2018 <a href="">Jaime Ramìrez</a>.</strong> All rights
     reserved.
   </footer>
+  
+
+  <!--Scripts-->
+ @yield('script')  
 
 
 
