@@ -15,7 +15,7 @@
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button);
-</script>   
+</script>
 
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="{{'bower_components/bootstrap/dist/css/bootstrap.min.css'}}">
@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="{{'bower_components/font-awesome/css/font-awesome.min.css'}}">
   <!-- Ionicons -->
   <link rel="stylesheet" href="{{'bower_components/Ionicons/css/ionicons.min.css'}}">
-    
+
 
     <!-- Datetimepicker necesary https://eonasdan.github.io/bootstrap-datetimepicker/-->
     <script type="text/javascript" src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js">
@@ -45,7 +45,7 @@
   <link rel="stylesheet" href="{{'bower_components/morris.js/morris.css'}}">
   <!-- jvectormap -->
   <link rel="stylesheet" href="{{'bower_components/jvectormap/jquery-jvectormap.css'}}">
-  
+
   <!-- Daterange picker -->
   <link rel="stylesheet" href="{{'bower_components/bootstrap-daterangepicker/daterangepicker.css'}}">
   <!-- bootstrap wysihtml5 - text editor -->
@@ -58,9 +58,6 @@
   height: 80% !important;
   padding-top:15%;
 }
-
-
-
 </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini" >
@@ -83,8 +80,8 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-         
-         
+
+
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -103,9 +100,9 @@
               </li>
               <!-- Menu Body -->
              <!-- cesion-->
-     
+
               <!-- Menu Footer-->
-               
+
               <li class="user-footer">
                 <div  style="text-align: center">
                   <a href="#" class="btn btn-default btn-flat" data-toggle="modal" data-target="#myModal">Cerrar Sesiòn</a>
@@ -136,7 +133,7 @@
         </div>
       </div>
       <!-- search form -->
-      
+
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
@@ -153,8 +150,8 @@
             <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
           </ul>
         </li>
-       
-       
+
+
         <li><a href="{{'/'}}"><i class="fa fa-book"></i> <span>Ordenes de Trabajo</span></a>
 
       </ul>
@@ -178,15 +175,15 @@
 
         <!-- Main content -->
         <section class="align-content-around"  id = "contenidoPrincipal" style="  margin-top: 15px; margin-left: 20px !important; margin-right: 20px !important;" >
-         
+
             <!--Contenido-->
             @yield('contenido')
-          
 
-             
+
+
 
         </section>
-  
+
   </div>
 
 <!-- Modal -->
@@ -221,10 +218,10 @@
     <strong>Copyright &copy; 2018 <a href="">Jaime Ramìrez</a>.</strong> All rights
     reserved.
   </footer>
-  
+
 
   <!--Scripts-->
- @yield('script')  
+ @yield('script')
 
 
 
@@ -233,13 +230,11 @@
             var date_input=$('input[name="date"]'); //our date input has the name "date"
             var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
             date_input.datepicker({
-              format: 'mm/dd/yyyy',
+              format: 'yyyy-mm-dd',
               container: container,
               todayHighlight: true,
               autoclose: true,
               language: 'es'
-
-
             })
           })
   </script>

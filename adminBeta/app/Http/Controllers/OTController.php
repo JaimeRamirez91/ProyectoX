@@ -32,11 +32,14 @@ class OTController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-     
+    public function store(Request $request){
     //Deben ir todos los campos, los que no captures mandalos vacios a menos que sean llaves foraneas 
-    //No debes incluir el id, caso contrario habra error y posiblemete no se inserte    
+    //No debes incluir el id, caso contrario habra error y posiblemete no se inserte
+
+    /*Inicio Validacion backend*/
+    
+
+    /*Fin Validacion backend*/    
     try{
        $ots = new Ot; 
        $ots->id_tipoot          = $request->id_tipoot; 
@@ -46,7 +49,7 @@ class OTController extends Controller
        $ots->fechaprog          = $request->fechaprog;
        $ots->jornada            = $request->jornada;
        $ots->comentariounidad   = $request->comentariounidad;
-       $ots->estado             = $request->estado;
+       $ots->estado             = $request->estado;;
        $ots->id_unidad          = $request->id_unidad;
        $ots->id_otstado         = $request->id_otstado;
        $ots->save(); 
@@ -55,11 +58,12 @@ class OTController extends Controller
        // do task when error
         $error = $e->getMessage();   // insert query
     }
+     
         
     return response()->json([
                      //ver si hay errores
-                      //              'message'   =>  "$error",
-                                     'message'   =>"este es el dato" . $request->id_tipoot ."-". $request->id_tipoot ."-".$request->otsiebel."-".  $request->comentario ."-". $request->fechaprog ."-". $request->jornada ."-". $request->comentariounidad ."-". $request->estado."-".$request->id_unidad."-".$request->id_otstado,
+                      //             'message'   =>  "$error",
+                                      'message'   => "consulta exitosa",
                                 ]);   
     }
 

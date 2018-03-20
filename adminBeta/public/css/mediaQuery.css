@@ -2,10 +2,10 @@
 
 @media (min-width: 1200px) {
    #contenidoPrincipal{
-		height: 1100px;
+		height: 1200px;
 	} 
 	#home{
-		height: 1000px;
+		height: 1100px;
 	} 
     #Cnt2OT{
 	background: none; 
@@ -13,14 +13,15 @@
 	border-radius: 10px !important;
 	margin-left: 20px !important;
 	background:  #F2F5F3 !important;
+	height: 1030px !important;
 	
-
 	 }
    #Cnt1OT{
 	background: none; 
 	border: 0.05em solid #46b8da !important;
 	border-radius: 10px !important;
 	background:  #F2F5F3 !important;
+	height: 1030px;
 	
 	
 
@@ -34,10 +35,10 @@
 
 @media (min-width: 992px) and (max-width: 1199px) {
 	#contenidoPrincipal{
-		height: 1100px;
+		height: 1500px;
 	} 
 	#home{
-		height: 1000px;
+		height: 1400px;
 	} 
     #Cnt2OT{
 	background: none; 
@@ -65,10 +66,10 @@
 
 @media (min-width: 768px) and (max-width: 991px) {
 	#contenidoPrincipal{
-		height: 2200px;
+		height: 1500px;
 	}
 	#home{
-		height: 2100px;
+		height: 1400px;
 	} 
     #Cnt2OT{
 	background: none; 
@@ -97,10 +98,10 @@
 @media (max-width: 767px) {
 
   #contenidoPrincipal{
-		height: 2200px;
+		height: 1500px;
 	} 
 	#home{
-		height: 2100px;
+		height: 1400px;
 	}
 	#Cnt2OT{
 	background: none; 

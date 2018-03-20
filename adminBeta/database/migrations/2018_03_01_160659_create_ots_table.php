@@ -18,7 +18,7 @@ class CreateOtsTable extends Migration
             $table->string('otsiebel',15)->nullable();
             $table->unsignedInteger('id_tipoot')->unsigned();
             $table->foreign('id_tipoot')->references('id')->on('tipoots');
-            $table->string('comentario',200);
+            $table->string('comentario',200)->nullable();
             $table->date('fechaprog');
             $table->string('jornada',2);
 
@@ -26,7 +26,8 @@ class CreateOtsTable extends Migration
             $table->unsignedInteger('id_unidad')->unsigned();
 
             $table->string('comentariounidad',300)->nullable();
-             $table->tinyInteger('estado');
+            //Eliminado por que existe ot estado id
+            // $table->tinyInteger('estado');
              $table->unsignedInteger('id_otstado')->unsigned();
 
             $table->foreign('id_cuenta')->references('id')->on('cuentas');

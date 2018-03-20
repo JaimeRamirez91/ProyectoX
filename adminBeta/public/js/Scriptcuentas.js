@@ -1,5 +1,5 @@
 $(document).ready(function(){
-       
+
        /*Bloqueo de input text*/
        $("#zonaCli").attr('disabled','disabled');
        $("#nUsr").attr('disabled','disabled');
@@ -9,7 +9,7 @@ $(document).ready(function(){
        $("#nodoCli").attr('disabled','disabled');
        $("#rutaCli").attr('disabled','disabled');
        $("#zonaCli").attr('disabled','disabled');
-  
+
        /*ocultar alert*/
 	    $('#alert-i').hide();
        $('#alert-d').hide();
@@ -18,72 +18,60 @@ $(document).ready(function(){
      /*inicio guardar TT*/
 
      $('#btn-saveOT').click(function(e){
-        
-            /*Previene el refres de la pagina*/
-             e.preventDefault();            
 
-             /*captura del formulario*/   
+
+            /*Previene el refres de la pagina*/
+             e.preventDefault();
+
+             /*captura del formulario*/
             var form = $(this).parents('form');
-           
+
 
             //Reenplaso por comodin codigo traido desde el form
-            var urls = form.attr('action');   
+            var urls = form.attr('action');
             var metodo = form.attr('method');
-            
-            var obj = {id: 1, name: "Some name", color: '#444444' };
-            var serialized = JSON.stringify(obj);
-            console.log(serialized);
-            console.log($("#zonaCli").val().serialized);
+
+           // var obj = {id: 1, name: "Some name", color: '#444444' };
+           // var serialized = JSON.stringify(obj);
+           // console.log(serialized);
+           // console.log($("#zonaCli").val().serialized);
+          var fecha         =   $("#date").val();
+          var tOT           =   $("#iTipoOT").val();
+          var idCuenta      =   $("#iCod").val();
+
+           console.log(tOT);
+          console.log(fecha);
+           console.log(idCuenta);
+
             $.ajax({
                     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                     type: metodo,
                     url: urls,
                     dataType: "json",
-                    data: {'id_tipoot' : 1, 'id_cuenta' : 3, 'otsiebel': "", 'comentario': "cj", 'fechaprog': "2018-03-16 09:18:56",
-                           'jornada' : "AM", 'comentariounidad' : "comentario", 'estado' : 0, 'id_unidad': 1, 'id_otstado' : 1},
-                    success: function(result){
-                          $('#alert-d2').html("Transaccion exitosa");
-                          console.log("Data Save:"+result.message);
-                    },
-                    error: function(result){
-                        $('#alert-d2').html("Transaccion erronea");
-                         console.log("Error"+result.message);
+                    data: {'id_tipoot' : 1, 'fechaprog': "2016-09-01", 'jornada': "AM",'cuenta':"01", 'unidad': "01", 'id_otstado' : 1 ,},
+                    success: function(data){
+                         if($.isEmptyObject(data.error)){
+                             alert(data.success);
+                         }else{
+                              console.log("Data Save:"+data.error);
+                         }
                     }
              });
 
-            
-          
-           
-          
+
+
+
+
       });
-          
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
        /* incio btn buscar*/
-	  
+
      $('#btn-buscar').click(function(e){
-        
+
             /*Previene el refres de la pagina*/
              e.preventDefault();
-             
+
              /*Limpieza de los imput*/
              $("#nUsr").val(" ");
              $("#aUsr").val(" ");
@@ -93,16 +81,16 @@ $(document).ready(function(){
              $("#rutaCli").val(" ");
              $("#zonaCli").val(" ");
 
-             /*captura del formulario*/   
+             /*captura del formulario*/
             var form = $(this).parents('form');
-            
+
             //console.log($("#iCod").val());
 
             //Reenplaso por comodin codigo traido desde el form
-          var url = form.attr('action').replace(':COD',$("#iCod").val());   
-          
+          var url = form.attr('action').replace(':COD',$("#iCod").val());
+
           $.post(url, form.serialize(), function(result){
-                
+
                  /*asingnacion de valores*/
                  $('#alert-d').hide();
                  $('#alert-i').show();
@@ -114,7 +102,7 @@ $(document).ready(function(){
                  $("#nodoCli").val(result.nodo);
                  $("#rutaCli").val(result.ruta);
                  $("#zonaCli").val(result.zona);
-                
+
 
             }).fail(function(e){
                    /*error*/
@@ -122,8 +110,8 @@ $(document).ready(function(){
                     $('#alert-d').show();
                     $('#alert-d').html("!!Error!!, Dato ingresado invalido 'o' revise su conexiòn a internet.");
             		});
-	        
+
 			});
 
-    
+
 });
